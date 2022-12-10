@@ -1,0 +1,7 @@
+/.idea
+/docker-compose.yml
+/__pycache__/
+/docker/
+/venv
+*.log
+/webapp/config.py
