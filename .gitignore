@@ -5,3 +5,5 @@
 /venv
 *.log
 /webapp/config.py
+/.mypy_cache/
+/webapp.db
