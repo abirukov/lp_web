@@ -1,5 +1,3 @@
-from flask import Flask
-
 from webapp.forms import LoginForm
 from webapp.python_org_news import get_python_news
 from webapp.model import db, News, User
@@ -47,7 +45,7 @@ def create_app() -> Flask:
         if form.validate_on_submit():
             user = User.query.filter_by(username=form.username.data).first()
             if user and user.check_password(form.password.data):
-                login_user(user)
+                login_user(user, remember=form.remember_me.data)
                 flash('Вы вошли на сайт')
                 return redirect(url_for('index'))
         flash('Неправильное имя пользователя или пароль')
