@@ -11,7 +11,7 @@ def index():
     weather_param = weather_by_city(current_app.config["WEATHER_DEFAULT_CITY"])
     news_list = News.query.order_by(News.published.desc()).all()
     return render_template(
-        "index.html",
+        "news/index.html",
         weather_param=weather_param,
         page_title=title,
         news_list=news_list,

@@ -16,7 +16,7 @@ with app.app_context():
     password2 = getpass('Повторите пароль: ')
     if not password == password2:
         sys.exit(0)
-    new_user = User(username=username, role='admin')
+    new_user = User(username=username, role='user')
     new_user.set_password(password)
 
     db.session.add(new_user)
