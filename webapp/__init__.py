@@ -1,5 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask
 from flask_login import LoginManager
+from flask_migrate import Migrate
 
 from webapp.python_org_news import get_python_news
 from webapp.db import db
@@ -15,6 +16,7 @@ def create_app() -> Flask:
     app = Flask(__name__)
     app.config.from_pyfile("config.py")
     db.init_app(app)
+    migrate = Migrate(app)
 
     login_manager = LoginManager()
     login_manager.init_app(app)

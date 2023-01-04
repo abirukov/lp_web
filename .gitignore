@@ -1,6 +1,6 @@
 /.idea
 /docker-compose.yml
-/__pycache__/
+__pycache__/
 /docker/
 /venv
 *.log
