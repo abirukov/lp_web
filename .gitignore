@@ -7,3 +7,5 @@ __pycache__/
 /webapp/config.py
 /.mypy_cache/
 /webapp.db
+/celerybeat-schedule
+/webapp1.db
