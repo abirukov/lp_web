@@ -20,7 +20,14 @@
                 {% endfor %}
             {% endif %}
             {% if current_user.is_authenticated %}
-
+                <form action="{{ url_for('news.add_comment') }}" method="POST">
+                    {{ comment_form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ comment_form.comment_text.label }}
+                        {{ comment_form.comment_text() }}
+                    </div>
+                    {{ comment_form.submit() }}
+                </form>
             {% else %}
                 <p>
                     <a href="{{ url_for('user.login', next=request.full_path)}}">Авторизуйтесь</a> чтобы добавить комментарий
